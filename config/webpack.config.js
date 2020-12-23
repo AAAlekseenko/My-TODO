@@ -73,7 +73,12 @@ const hasJsxRuntime = (() => {
     return false;
   }
 })();
-
+module.exports = {
+  //...
+  resolve: {
+    extensions: ['.js', '.jsx']
+  }
+};
 // This is the production and development configuration.
 // It is focused on developer experience, fast rebuilds, and a minimal bundle.
 module.exports = function (webpackEnv) {
@@ -185,6 +190,7 @@ module.exports = function (webpackEnv) {
             // the webpack plugin takes care of injecting the dev client for us.
             webpackDevClientEntry,
             // Finally, this is your app's code:
+            "react-hot-loader/path",
             paths.appIndexJs,
             // We include the app code last so that if there is a runtime error during
             // initialization, it doesn't blow up the WebpackDevServer client, and
@@ -406,6 +412,7 @@ module.exports = function (webpackEnv) {
                 ],
                 
                 plugins: [
+                  "react-hot-loader/babel",
                   [
                     require.resolve('babel-plugin-named-asset-import'),
                     {
