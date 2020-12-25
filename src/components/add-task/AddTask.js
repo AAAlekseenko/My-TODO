@@ -27,6 +27,8 @@ class AddTask extends React.Component {
         this.props.handleAddTask(newTaskItem);
         this.setState({text: ''});
     }
+    
+    
 
     render() {
         return (
@@ -39,7 +41,13 @@ class AddTask extends React.Component {
                     onClick={this.handleOnSubmit}
 
                 >
-                    1231
+                    Add Task
+                </button>
+                <button
+                    type="button"
+                    onClick={this.props.handleDelAllCheckItems}
+                >
+                    Delete checked task
                 </button>
             </form>
         );

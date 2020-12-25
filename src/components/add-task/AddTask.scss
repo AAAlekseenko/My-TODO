@@ -3,13 +3,29 @@
     padding: 20px;
     margin-bottom: 5px;
     border-radius: 30px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
         input {
             border: none;
             outline: none;
-           
+            width: 70%;
+            height: 38px;
+            border-radius: 10px;
         }
         button {
             cursor: pointer;
+            border-radius: 10px;
+            outline: none;
+            border:none;
+            transition:  0.4s;
+            width: 230px;
+            padding: 10px 10px;
+            margin-left: 5px;
+        }
+        button:hover {
+            color: rgb(121, 182, 242);
+            background-color: rgb(40, 44, 52);
         }
         
 }

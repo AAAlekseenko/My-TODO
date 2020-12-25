@@ -31,17 +31,21 @@ class TaskList extends React.Component {
         this.setState({items});
     }
 
+    handleDelAllCheckItems = () => {
+        const items = this.state.items.filter(item => item.checked !== true);
+        this.setState({items});
+    }
 
 
     render() {
         return (
             <div className='todo__body'>
-                <AddTask handleAddTask={this.handleItems} />
+                <AddTask handleAddTask={this.handleItems} handleDelAllCheckItems={this.handleDelAllCheckItems} />
                 {this.state.items.map(item =>  <TaskItem 
                     item={item} 
                     handleChangeItem={this.handleChangeItem} 
                     key={item.id} 
-                    handleDeleteItems={this.handleDeleteItems}
+                    handleDeleteItem={this.handleDeleteItem}
                 />)}
             </div>
         );
